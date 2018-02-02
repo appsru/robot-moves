@@ -2,10 +2,10 @@ body {
     overflow:hidden;
     margin:0px;
     }
-    .bgw {
+.bgw {
       background-color:white;
     }
-  .robotable {
+.robotable {
     background-color:#efefef;
     position:absolute;
     left:100px;
@@ -15,6 +15,7 @@ body {
     border-left:solid 1px #D9D9D9;
     opacity:.9;
   }
+
   .robo {
     z-index:5;
     opacity:1;
@@ -23,6 +24,7 @@ body {
   input {
     z-index:3;
   }
+
   .bgvideo {
     position: fixed;
     top: 50%;
@@ -36,48 +38,41 @@ body {
     background-size: cover;
     transition: 1s opacity;
 }
-.blcover {
-    position:fixed;
-    height:100%;
-    width:100%;
-    left:700px;
-    z-index:12;
-    color:white;
-    background-color:#444;
-}
+
 .heading{
-  margin:auto auto;
-  color:white;
-  font-size:50px;
-  font-family:arial;
-  z-index:3;
-  width:700px;
-  position:absolute;
-  top:20px;
-  text-align: center;
-  display:none;
+    margin:auto auto;
+    color:white;
+    font-size:50px;
+    font-family:arial;
+    z-index:3;
+    width:700px;
+    position:absolute;
+    top:20px;
+    text-align: center;
+    display:none;
 }
+
 .howto{
-  font-size:20px;
-  font-family:arial;
-  z-index:3;
-  display:none;
+    font-size:20px;
+    font-family:arial;
+    z-index:3;
+    display:none;
 }
 .warning{
-  margin:auto auto;
-  text-align: center;
-  font-size:30px;
-  font-family:arial;
-  z-index:12;
-  display:none;
-  color:white;
-  position:absolute;
-  bottom:5px;
-  width:700;
+    margin:auto auto;
+    text-align: center;
+    font-size:30px;
+    font-family:arial;
+    z-index:12;
+    display:none;
+    color:white;
+    position:absolute;
+    bottom:5px;
+    width:700;
 }
-span {
-  background-color:black;
-  padding:2px;
+.warning span {
+    background-color:black;
+    padding:2px;
 }
 .startBtn{
     position:absolute;
@@ -86,4 +81,34 @@ span {
     font-size:40px;
     width:300px;
     border-radius:10px;
+}
+.blcover {
+    position:absolute;
+    height:100%;
+    width:100%;
+    left:700px;
+    z-index:12;
+    color:white;
+    background-color:#444;
+    padding:50px;
+}
+.report {
+    margin-top:150px;
+    width:40%;
+    color:white;
+    font-family:arial;
+    text-align: left;
+    font-size:70px;
+}
+
+.gX, .gY, .gFace {
+    width:40%;
+    color:white;
+    font-family:arial;
+    text-align: left;
+    font-size:20px;
+    margin-left:40px;
+}
+.yellow {
+    color:yellow;
 }
