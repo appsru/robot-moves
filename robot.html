@@ -3,118 +3,42 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Robot</title>
-
-<style>
-  .robotable {
-    position:absolute;
-    left:100px;
-    top:100px;
-    z-index:0;
-    border-top:solid 1px #979797;
-    border-left:solid 1px #979797;
-  }
-  .robo {
-    z-index:1;
-  }
-</style>
-
-    <script type="text/javascript">
-
-            function leftArrowPressed() {
-            document.getElementById("robot").src="robot-l.png";
-            document.getElementById("direction").value="l";
-
-            }
-
-            function rightArrowPressed() {
-              document.getElementById("robot").src="robot-r.png";
-            document.getElementById("direction").value="r";
-
-            }
-
-            function upArrowPressed() {
-              document.getElementById("robot").src="robot-b.png";
-            document.getElementById("direction").value="u";
-            }
-
-            function downArrowPressed() {
-              document.getElementById("robot").src="robot-f.png";
-            document.getElementById("direction").value="d";
-            }
-
-
-            function moveLeft() {
-            var element = document.getElementById("robot");
-            element.style.left = parseInt(element.style.left) - 100 + 'px';
-            }
-
-            function moveRight() {
-            var element = document.getElementById("robot");
-            element.style.left = parseInt(element.style.left) + 100 + 'px';
-
-            }
-
-            function moveUp() {
-            var element = document.getElementById("robot");
-            element.style.top = parseInt(element.style.top) - 100 + 'px';
-            }
-
-            function moveDown() {
-            var element = document.getElementById("robot");
-            element.style.top = parseInt(element.style.top) + 100 + 'px';
-            }
-
-
-
-            function moveRobot() {
-            var dir = document.getElementById("direction").value;
-            var robot = document.getElementById("robot");
-            if(dir==="l") { moveLeft() } else
-            if(dir==="r") { moveRight()} else
-            if(dir==="u") { moveUp()   } else
-            if(dir==="d") { moveDown() } 
-            }
-
-            function moveSelection(evt) {
-                switch (evt.keyCode) {
-                    case 37:
-                    leftArrowPressed();
-                    break;
-                    case 39:
-                    rightArrowPressed();
-                    break;
-                    case 38:
-                    upArrowPressed();
-                    break;
-                    case 40:
-                    downArrowPressed();
-                    break;
-                    case 32:
-                    moveRobot();
-                    break;
-                    }
-                };
-
-        function robotReady()
-        {
-          window.addEventListener('keydown', moveSelection);
-        }
-
-  </script>
+    
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel='stylesheet' href='robot.css' type='text/css' media='all' />
+    <script src="robot.js"></script>
   </head>
 
-  <body onload="robotReady()" onkeydown="" onkeyup="" bgcolor='yellow'>
-   
-  <img id="robot" class="robo" style="position:absolute;left:0px;top:0px;" src="robot-f.png" height="165" width="115">
+  <body onload="robotReady()" onkeydown="" onkeyup="" bgcolor='black'>
+      <div class="blcover">&nbsp;HI</div>
+      <video id="bgvid" class="bgvideo" playsinline="" autoplay="" loop="" style="z-index:0;">
+          <source src="./fire-bg.mp4" type="video/mp4">
+      </video>
+   <button class="startBtn" onclick="placeRobot()">PLACE ROBOT</button>
+  <img id="robot" class="robo" style="position:absolute;left:-150px;top:0px;" src="robot-f.png" height="165" width="115">
   <div class="robotable">
-    <img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><br>
-    <img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><br>
-    <img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><br>
-    <img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><br>
-    <img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png"><img src="sq-br.png">
-  </div>
+    <script>
+      r1="";r2="";r3="";r4="";r5="";
+      for(i=1;i<6;i++){
+        r1 += '<img src="sq-br.png" id="a'+i+'">';
+        r2 += '<img src="sq-br.png" id="b'+i+'">';
+        r3 += '<img src="sq-br.png" id="c'+i+'">';
+        r4 += '<img src="sq-br.png" id="d'+i+'">';
+        r5 += '<img src="sq-br.png" id="e'+i+'">';
+      }
+    document.write(r1+"<br>"+r2+"<br>"+r3+"<br>"+r4+"<br>"+r5)
+    </script>
+    </div>
   <form>
     <input type="hidden" id="direction" value="d">
+    <input type="text" id="x" value="0" style="position:absolute;bottom:10;left:10;width:30px;">
+    <input type="text" id="y" value="0" style="position:absolute;bottom:10;left:60;width:30px;">
   </form>
+
+  <div class="heading">Welcome To The Game
+      <div class="howto">Arrows point Robo in the direction. Space bar moves him.</div>
+    </div>
+    <div class="warning"><span> &nbsp; ...are you crazy!? That's too hot &nbsp; </span></div>
+    
   </body>
 </html>
