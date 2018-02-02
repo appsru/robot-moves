@@ -1,4 +1,7 @@
 
+            
+
+
             function pointRoboLeft() {
                 document.getElementById("robot").src="robot-l.png";
                 document.getElementById("direction").value="l";
@@ -69,6 +72,29 @@
   
                 document.getElementById("x").value = Math.floor(a1/100);
                 document.getElementById("y").value = Math.floor(b1/100)+1;
+                updateOutput()
+              }
+
+              function updateOutput(){
+                gridX = document.getElementById("x").value;
+                gridY = document.getElementById("y").value;
+                facing = document.getElementById("direction").value
+                if(gridX==1) {document.getElementById("oX").innerHTML = 0 } else
+                if(gridX==2) {document.getElementById("oX").innerHTML = 1 } else
+                if(gridX==3) {document.getElementById("oX").innerHTML = 2 } else
+                if(gridX==4) {document.getElementById("oX").innerHTML = 3 } else
+                if(gridX==5) {document.getElementById("oX").innerHTML = 4 }
+
+                if(gridY==1) {document.getElementById("oY").innerHTML = 4 } else
+                if(gridY==2) {document.getElementById("oY").innerHTML = 3 } else
+                if(gridY==3) {document.getElementById("oY").innerHTML = 2 } else
+                if(gridY==4) {document.getElementById("oY").innerHTML = 1 } else
+                if(gridY==5) {document.getElementById("oY").innerHTML = 0 }
+
+                if(facing=="l") {document.getElementById("roboIsFacing").innerHTML = "WEST" } else
+                if(facing=="r") {document.getElementById("roboIsFacing").innerHTML = "EAST" } else
+                if(facing=="u") {document.getElementById("roboIsFacing").innerHTML = "NORTH" } else
+                if(facing=="d") {document.getElementById("roboIsFacing").innerHTML = "SOUTH" } 
               }
   
   
@@ -82,6 +108,7 @@
               if(dir==="d") { moveDown()   } 
               lightUpGrid()
               }
+
               function lightUpGrid(){
                 im="";
                 $("img").removeClass('bgw');
@@ -113,11 +140,15 @@
                       pointRoboDown();
                       break;
                       case 32:
-                      moveRobot(rl,rt);
+                      moveRobot();
                       break;
                     }
+                    updateOutput();
                   };
+
                   function tooHot(){
+                    var q = roboQuotes[ Math.floor( Math.random() * roboQuotes.length ) ];
+                    document.getElementById("quote").innerHTML = q;
                     $(".warning").fadeIn(500);
                     setTimeout('$(".warning").fadeOut(1000)',2000);
   
@@ -136,4 +167,16 @@
               setTimeout('$("#e1").addClass("bgw")',900);
               setTimeout('$(".heading").fadeIn(1000)',1000);
               setTimeout('$(".howto").fadeIn(1000)',2000);
+            updateOutput();
             }
+
+            var roboQuotes = [
+                "...are you crazy!? That's too hot",
+                "You don't expect me to jump do you?",
+                "Ahh...no thanks",
+                "It does not compute, it does not compute",
+                "I'll melt if I go there",
+                "That's FIRE dude",
+                "Get the hose ready",
+                "I'll last 2 minutes if I go further"
+              ];
