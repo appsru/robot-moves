@@ -10,7 +10,15 @@
   </head>
 
   <body onload="robotReady()" onkeydown="" onkeyup="" bgcolor='black'>
-      <div class="blcover">&nbsp;HI</div>
+      <div class="blcover">
+        <div class="report">OUTPUT</div>
+        <br />
+        <br />
+        <div class="gX">Vertical Grid <span id="oX" class="yellow"></span></div>
+        <div class="gY">Horizontal Grid <span id="oY" class="yellow"></span></div>
+        <div class="gFace">Robo Is Facing <span id="roboIsFacing" class="yellow"></span></div>     
+      </div>
+
       <video id="bgvid" class="bgvideo" playsinline="" autoplay="" loop="" style="z-index:0;">
           <source src="./fire-bg.mp4" type="video/mp4">
       </video>
@@ -26,19 +34,19 @@
         r4 += '<img src="sq-br.png" id="d'+i+'">';
         r5 += '<img src="sq-br.png" id="e'+i+'">';
       }
-    document.write(r1+"<br>"+r2+"<br>"+r3+"<br>"+r4+"<br>"+r5)
+    document.write(r1+"<br />"+r2+"<br />"+r3+"<br />"+r4+"<br />"+r5)
     </script>
     </div>
   <form>
     <input type="hidden" id="direction" value="d">
-    <input type="text" id="x" value="0" style="position:absolute;bottom:10;left:10;width:30px;">
-    <input type="text" id="y" value="0" style="position:absolute;bottom:10;left:60;width:30px;">
+    <input type="hodden" id="x" value="1">
+    <input type="hidden" id="y" value="5">
   </form>
 
   <div class="heading">Welcome To The Game
       <div class="howto">Arrows point Robo in the direction. Space bar moves him.</div>
     </div>
-    <div class="warning"><span> &nbsp; ...are you crazy!? That's too hot &nbsp; </span></div>
+    <div class="warning"><span> &nbsp; <span id="quote"></span> &nbsp; </span></div>
     
   </body>
 </html>
