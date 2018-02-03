@@ -1,0 +1,63 @@
+<!DOCTYPE="html">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Robot</title>
+    
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel='stylesheet' href='robot.css' type='text/css' media='all' />
+    <script src="robot1.js"></script>
+  </head>
+
+  <body onload="robotReady()" onkeydown="" onkeyup="" bgcolor='black'>
+        <div class="fa fa-home poshome" aria-hidden="true" title="Home" onclick="location.href='./index.html'"></div>
+      <div class="blcover">
+        <div class="report">OUTPUT</div>
+        <br />
+        <br />
+        <div class="gX">Vertical Grid <span id="oX" class="yellow none"></span></div>
+        <div class="gY">Horizontal Grid <span id="oY" class="yellow none"></span></div>
+        <div class="gFace">Robo Is Facing <span id="roboIsFacing" class="yellow none"></span></div>    
+        <div class="instructions">
+            <ul>
+                <li> Left arrow points Robo left. </li>
+                <li> Right arrow points Robo right.</li>
+                <li> Up arrow points Robo up.</li>
+                <li> Down arrow points Robo down.</li>
+            </ul>
+        </div>    
+      </div>
+
+      <video id="bgvid" class="bgvideo" playsinline="" autoplay="" loop="" style="z-index:0;">
+          <source src="./fire-bg.mp4" type="video/mp4">
+      </video>
+   <button class="startBtn" onclick="revealCoords();placeRobot();">PLACE ROBO</button>
+  <img id="robot" class="robo" style="position:absolute;left:-150px;top:0px;" src="robot-f.png" height="165" width="115">
+  <div class="robotable">
+    <script>
+      r1="";r2="";r3="";r4="";r5="";
+      for(i=1;i<6;i++){
+        r1 += '<img src="sq-br.png" id="a'+i+'">';
+        r2 += '<img src="sq-br.png" id="b'+i+'">';
+        r3 += '<img src="sq-br.png" id="c'+i+'">';
+        r4 += '<img src="sq-br.png" id="d'+i+'">';
+        r5 += '<img src="sq-br.png" id="e'+i+'">';
+      }
+    document.write(r1+"<br />"+r2+"<br />"+r3+"<br />"+r4+"<br />"+r5)
+    </script>
+    </div>
+  <form>
+    <input type="hidden" id="direction" value="d">
+    <input type="hidden" id="gamestatus" value="stopped">
+    <input type="hodden" id="x" value="1">
+    <input type="hidden" id="y" value="5">
+  </form>
+
+  <div class="heading">Welcome To The Game
+      <div class="howto">Arrows point Robo in the direction. Space bar moves him.</div>
+    </div>
+    <div class="warning"><span> &nbsp; <span id="quote"></span> &nbsp; </span></div>
+    
+  </body>
+</html>

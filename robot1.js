@@ -2,46 +2,25 @@
             
 
 
-            function rotateRoboLeft() {
-                dir = document.getElementById("direction").value
-                if(dir=="u") {
+            function pointRoboLeft() {
                 document.getElementById("robot").src="robot-l.png";
                 document.getElementById("direction").value="l";
-                } else 
-                if(dir=="l") {
-                document.getElementById("robot").src="robot-b.png";
-                document.getElementById("direction").value="u";
-                } else 
-                if(dir=="d") {
-                document.getElementById("robot").src="robot-l.png";
-                document.getElementById("direction").value="l";
-                } else 
-                if(dir=="r") {
-                document.getElementById("robot").src="robot-b.png";
-                document.getElementById("direction").value="u";
-                } 
               }
   
-              function rotateRoboRight() {
-                dir = document.getElementById("direction").value
-                if(dir=="u") {
+              function pointRoboRight() {
                 document.getElementById("robot").src="robot-r.png";
                 document.getElementById("direction").value="r";
-                } else 
-                if(dir=="r") {
-                document.getElementById("robot").src="robot-f.png";
-                document.getElementById("direction").value="d";
-                } else 
-                if(dir=="d") {
-                document.getElementById("robot").src="robot-r.png";
-                document.getElementById("direction").value="r";
-                } else 
-                if(dir=="l") {
-                document.getElementById("robot").src="robot-f.png";
-                document.getElementById("direction").value="d";
-                } 
               }
   
+              function pointRoboUp() {
+                document.getElementById("robot").src="robot-b.png";
+                document.getElementById("direction").value="u";
+              }
+  
+              function pointRoboDown() {
+                document.getElementById("robot").src="robot-f.png";
+                document.getElementById("direction").value="d";
+              }
   
   
               function moveLeft() {
@@ -150,10 +129,16 @@
                 rt = document.getElementById("robot").style.top;
                   switch (evt.keyCode) {
                       case 37:
-                      rotateRoboLeft();
+                      pointRoboLeft();
                       break;
                       case 39:
-                      rotateRoboRight();
+                      pointRoboRight();
+                      break;
+                      case 38:
+                      pointRoboUp();
+                      break;
+                      case 40:
+                      pointRoboDown();
                       break;
                       case 32:
                       moveRobot();
@@ -186,13 +171,13 @@
               setTimeout('$(".howto").fadeIn(1000)',2000);
             updateOutput();
             }
-
+            
             function revealCoords(){
-                $("#oX").fadeIn(1000);
-                $("#oY").fadeIn(1000);
-                $("#roboIsFacing").fadeIn(1000);
-                $("#gamestatus").val("started");
-              }
+              $("#oX").fadeIn(1000);
+              $("#oY").fadeIn(1000);
+              $("#roboIsFacing").fadeIn(1000);
+              $("#gamestatus").val("started");
+            }
 
             var roboQuotes = [
                 "...are you crazy!? That's too hot",

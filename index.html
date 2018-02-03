@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="robot.css">
+    <title>Robo Moves</title>
+</head>
+<body>
+
+        <div class="blcover">
+                <div><h1>MOVE ROBO AROUND THE GRID</h1></div>
+                <br />
+                <div class="introContainer">
+                <div class="col gX">Use LEFT-RIGHT Arrows to move Robo 
+                <div class="ind1">
+                    <button class="playBtn" onclick='location.href="robot.html"'>PLAY</button></div></div>
+                <div class="col gY">Use LEFT-RIGHT-UP-DOWN Arrows  
+                <div class="ind1">
+                    <button class="playBtn" onclick='location.href="robot1.html"'>PLAY</button></div></div>
+                <div class="gFace"><img class="ind" src="./robot-f.png"></div>    
+            </div> 
+              </div>
+
+
+        <video id="bgvid" class="bgvideo" playsinline="" autoplay="" loop="" style="z-index:0;">
+                <source src="./fire-bg.mp4" type="video/mp4">
+        </video>
+
+        <div class="robotable">
+          <script>
+            r1="";r2="";r3="";r4="";r5="";
+            for(i=1;i<6;i++){
+              r1 += '<img src="sq-br.png" id="a'+i+'">';
+              r2 += '<img src="sq-br.png" id="b'+i+'">';
+              r3 += '<img src="sq-br.png" id="c'+i+'">';
+              r4 += '<img src="sq-br.png" id="d'+i+'">';
+              r5 += '<img src="sq-br.png" id="e'+i+'">';
+            }
+          document.write(r1+"<br />"+r2+"<br />"+r3+"<br />"+r4+"<br />"+r5)
+          </script>
+</body>
+</html>

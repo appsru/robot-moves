@@ -112,3 +112,47 @@ body {
 .yellow {
     color:yellow;
 }
+h1 {
+
+    font-family:arial;
+}
+.playBtn {
+    font-size:30px;
+    margin-top:35x;
+    border-radius: 10px;
+    position: relative;
+}
+.introContainer {
+    display: grid;
+    grid-template-columns: 250px 250px;
+}
+.col {
+    width:85%;
+}
+.ind {
+    margin-left:100px;
+}
+.ind1 {
+    margin-left:50px;
+    margin-top:20px;
+}
+.poshome {
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:50px;
+    height:50px;
+    z-index:15;
+    color:#ccc;
+    font-size:40px;
+    cursor: pointer;
+}
+.instructions{
+    font-size:14px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top:30px;
+    line-height:2;
+}
+.none {
+    display:none;
+}
