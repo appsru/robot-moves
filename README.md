@@ -1,7 +1,7 @@
 # robot-moves
 Robot moves around the board, with some restrictions.
 
-View it at http://xplor.dev.stevs.net
+View it at http://robo.git.dev.stevs.net/
 
 Download zip, extract it and open index.html in the browser.
   * robot.html uses left-right arrows to direct Robo
