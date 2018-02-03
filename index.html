@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="robot.css">
-    <title>Robo Moves</title>
-</head>
+<!DOCTYPE="html">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Robot</title>
+    
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel='stylesheet' href='robot.css' type='text/css' media='all' />
+    <script src="robot.js"></script>
+  </head>
 <body>
 
         <div class="blcover">
@@ -16,7 +18,7 @@
                 <div class="col gX">Use LEFT-RIGHT Arrows to move Robo 
                 <div class="ind1">
                     <button class="playBtn" onclick='location.href="robot.html"'>PLAY</button></div></div>
-                <div class="col gY">Use LEFT-RIGHT-UP-DOWN Arrows  
+                <div class="col gY">...or use LEFT-RIGHT-UP-DOWN Arrows  
                 <div class="ind1">
                     <button class="playBtn" onclick='location.href="robot1.html"'>PLAY</button></div></div>
                 <div class="gFace"><img class="ind" src="./robot-f.png"></div>    
@@ -29,16 +31,17 @@
         </video>
 
         <div class="robotable">
-          <script>
-            r1="";r2="";r3="";r4="";r5="";
-            for(i=1;i<6;i++){
-              r1 += '<img src="sq-br.png" id="a'+i+'">';
-              r2 += '<img src="sq-br.png" id="b'+i+'">';
-              r3 += '<img src="sq-br.png" id="c'+i+'">';
-              r4 += '<img src="sq-br.png" id="d'+i+'">';
-              r5 += '<img src="sq-br.png" id="e'+i+'">';
-            }
-          document.write(r1+"<br />"+r2+"<br />"+r3+"<br />"+r4+"<br />"+r5)
-          </script>
+                <script>
+                  r1="";r2="";r3="";r4="";r5="";
+                  for(i=1;i<6;i++){
+                    r1 += '<img src="sq-br.png" id="a'+i+'">';
+                    r2 += '<img src="sq-br.png" id="b'+i+'">';
+                    r3 += '<img src="sq-br.png" id="c'+i+'">';
+                    r4 += '<img src="sq-br.png" id="d'+i+'">';
+                    r5 += '<img src="sq-br.png" id="e'+i+'">';
+                  }
+                document.write(r1+"<br />"+r2+"<br />"+r3+"<br />"+r4+"<br />"+r5)
+                </script>
+                </div>
 </body>
 </html>
