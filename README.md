@@ -2,7 +2,7 @@
 Robot (Robo) moves around the board, with some restrictions.
 
 * PLATFORM: Desktop only. Uses keyboard arrows to move Robo 
-* CODE: Written in javascript & jquery.
+* CODE: Written in javascript (commented throughout) & jquery.
 * UNIT TESTING: Tested methods in browser in the order they were created.
 * BROWSERS: Tested in Chrome, Firefox & Safari (Safari ignores css3 grid used on the homepage).
 
