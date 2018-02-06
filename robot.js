@@ -1,5 +1,13 @@
 
-            
+            function play(what){
+              if(what===0) {
+                $(".preload").css("visibility", "visible");
+                location.href="robot.html";
+              } else if(what===1) {
+                $(".preload").css("visibility", "visible");
+                location.href="robot1.html";
+              }
+            }
 
 
             function rotateRoboLeft() {
@@ -7,43 +15,43 @@
                 if(dir=="u") {
                 document.getElementById("robot").src="robot-l.png";
                 document.getElementById("direction").value="l";
-                } else 
+                } else
                 if(dir=="l") {
                 document.getElementById("robot").src="robot-b.png";
                 document.getElementById("direction").value="u";
-                } else 
+                } else
                 if(dir=="d") {
                 document.getElementById("robot").src="robot-l.png";
                 document.getElementById("direction").value="l";
-                } else 
+                } else
                 if(dir=="r") {
                 document.getElementById("robot").src="robot-b.png";
                 document.getElementById("direction").value="u";
-                } 
+                }
               }
-  
+
               function rotateRoboRight() {
                 dir = document.getElementById("direction").value
                 if(dir=="u") {
                 document.getElementById("robot").src="robot-r.png";
                 document.getElementById("direction").value="r";
-                } else 
+                } else
                 if(dir=="r") {
                 document.getElementById("robot").src="robot-f.png";
                 document.getElementById("direction").value="d";
-                } else 
+                } else
                 if(dir=="d") {
                 document.getElementById("robot").src="robot-r.png";
                 document.getElementById("direction").value="r";
-                } else 
+                } else
                 if(dir=="l") {
                 document.getElementById("robot").src="robot-f.png";
                 document.getElementById("direction").value="d";
-                } 
+                }
               }
-  
-  
-  
+
+
+
               function moveLeft() {
               var element = document.getElementById("robot");
               if(parseInt(element.style.left) > 100){
@@ -53,7 +61,7 @@
                   tooHot();
                 }
               }
-  
+
               function moveRight() {
               var element = document.getElementById("robot");
               if(parseInt(element.style.left) < 500){
@@ -62,9 +70,9 @@
                 } else {
                   tooHot();
                 }
-  
+
               }
-  
+
               function moveUp() {
               var element = document.getElementById("robot");
               if(parseInt(element.style.top) > 100){
@@ -74,7 +82,7 @@
                   tooHot();
                 }
               }
-  
+
               function moveDown() {
               var element = document.getElementById("robot");
               if(parseInt(element.style.top) < 400){
@@ -84,13 +92,13 @@
                   tooHot();
                 }
               }
-  
+
               function updateCoords(x,y){
                 a = x.split("px");
                 a1 = a.join("");
                 b = y.split("px")
                 b1 = b.join("");
-  
+
                 document.getElementById("x").value = Math.floor(a1/100);
                 document.getElementById("y").value = Math.floor(b1/100)+1;
                 updateOutput()
@@ -115,18 +123,18 @@
                 if(facing=="l") {document.getElementById("roboIsFacing").innerHTML = "WEST" } else
                 if(facing=="r") {document.getElementById("roboIsFacing").innerHTML = "EAST" } else
                 if(facing=="u") {document.getElementById("roboIsFacing").innerHTML = "NORTH" } else
-                if(facing=="d") {document.getElementById("roboIsFacing").innerHTML = "SOUTH" } 
+                if(facing=="d") {document.getElementById("roboIsFacing").innerHTML = "SOUTH" }
               }
-  
-  
-  
+
+
+
               function moveRobot() {
               var dir = document.getElementById("direction").value;
               var robot = document.getElementById("robot");
               if(dir==="l") { moveLeft()   } else
               if(dir==="r") { moveRight()  } else
               if(dir==="u") { moveUp()     } else
-              if(dir==="d") { moveDown()   } 
+              if(dir==="d") { moveDown()   }
               lightUpGrid()
               }
 
@@ -141,9 +149,9 @@
                 if(y==4) {im="d"+x}
                 if(y==5) {im="e"+x}
                 eval('$("#'+im+'").addClass("bgw");');
-                
+
               }
-  
+
               function moveSelection(evt) {
                 if($("#gamestatus").val()=="started"){
                 rl = document.getElementById("robot").style.left;
@@ -168,10 +176,10 @@
                     document.getElementById("quote").innerHTML = q;
                     $(".warning").fadeIn(500);
                     setTimeout('$(".warning").fadeOut(1000)',2000);
-  
+
                   }
-  
-  
+
+
           function robotReady()
           {
             window.addEventListener('keydown', moveSelection);

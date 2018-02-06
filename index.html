@@ -3,26 +3,38 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Robot</title>
-    
+
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel='stylesheet' href='robot.css' type='text/css' media='all' />
     <script src="robot.js"></script>
   </head>
 <body>
+  <div class="preload">
+    <img src="loader.svg">
+  </div>
 
         <div class="blcover">
                 <div><h1>MOVE ROBO AROUND THE GRID</h1></div>
                 <br />
                 <div class="introContainer">
-                <div class="col gX">Use LEFT-RIGHT Arrows to move Robo 
+                <div class="col gX">Use LEFT-RIGHT Arrows to move Robo
                 <div class="ind1">
-                    <button class="playBtn" onclick='location.href="robot.html"'>PLAY</button></div></div>
-                <div class="col gY">...or use LEFT-RIGHT-UP-DOWN Arrows  
+                    <button class="playBtn" onclick='play(0)'>PLAY</button></div></div>
+                <div class="col gY">...or use LEFT-RIGHT-UP-DOWN Arrows
                 <div class="ind1">
-                    <button class="playBtn" onclick='location.href="robot1.html"'>PLAY</button></div></div>
-                <div class="gFace"><img class="ind" src="./robot-f.png"></div>    
-            </div> 
+                    <button class="playBtn" onclick='play(1)'>PLAY</button></div></div>
+                <div class="gFace">
+                  <div class="col gX abs mt10">
+                    <img class="mt10" width="60" height="80" src="./robot-l.png"><br />
+                    <img class="mt10" width="60" height="80" src="./robot-r.png"><br />
+                    <img class="mt10" width="60" height="80" src="./robot-b.png">
+                  </div>
+                    <div class="col gY abs">
+                      <img class="ind abs" style="vertical-align:top;" src="./robot-f.png">
+                    </div>
+                </div>
+            </div>
               </div>
 
 
