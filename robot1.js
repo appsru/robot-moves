@@ -1,6 +1,8 @@
 
             
 
+             // points robo in a direction based on which arrow was pressed
+
 
             function pointRoboLeft() {
                 document.getElementById("robot").src="robot-l.png";
@@ -21,7 +23,9 @@
                 document.getElementById("robot").src="robot-f.png";
                 document.getElementById("direction").value="d";
               }
-  
+
+              // Space bar moves robo in the direction he is facing.
+              // If he is on grid perimeter he can't move and sends a message - tooHot()
   
               function moveLeft() {
               var element = document.getElementById("robot");
@@ -63,6 +67,8 @@
                   tooHot();
                 }
               }
+
+             // gets robo's x,y coords, removes "px", divides by 100, send to hidden fields              
   
               function updateCoords(x,y){
                 a = x.split("px");
@@ -75,6 +81,8 @@
                 updateOutput()
               }
 
+              // gets x,y from hidden fields, converts them to grid positions and updates the page
+              
               function updateOutput(){
                 gridX = document.getElementById("x").value;
                 gridY = document.getElementById("y").value;
@@ -98,6 +106,7 @@
               }
   
   
+              // initial method used to move robo when space bar is pressed
   
               function moveRobot() {
               var dir = document.getElementById("direction").value;
@@ -108,6 +117,8 @@
               if(dir==="d") { moveDown()   } 
               lightUpGrid()
               }
+
+              // highlights the grid square robo is currently on
 
               function lightUpGrid(){
                 im="";
@@ -123,30 +134,35 @@
                 
               }
   
+              // Moves robo based on what key was pressed if the game has started.
+              // "Place Robo" button changes gamestatus element from stopped to started
+
               function moveSelection(evt) {
                 if($("#gamestatus").val()=="started"){
                 rl = document.getElementById("robot").style.left;
                 rt = document.getElementById("robot").style.top;
                   switch (evt.keyCode) {
-                      case 37:
+                      case 37:          // left arrow
                       pointRoboLeft();
                       break;
-                      case 39:
+                      case 39:          // right arrow
                       pointRoboRight();
                       break;
-                      case 38:
+                      case 38:          // up arrow
                       pointRoboUp();
                       break;
-                      case 40:
+                      case 40:          // down arrow
                       pointRoboDown();
                       break;
-                      case 32:
+                      case 32:          // space bar
                       moveRobot();
                       break;
                       }
                     updateOutput();
                     }
                   };
+
+                  // Message robo sends if user tries to move him off the grid
 
                   function tooHot(){
                     var q = roboQuotes[ Math.floor( Math.random() * roboQuotes.length ) ];
@@ -155,37 +171,46 @@
                     setTimeout('$(".warning").fadeOut(1000)',2000);
   
                   }
+
+                  // enable browser to listen for keydown event
   
   
-          function robotReady()
-          {
-            window.addEventListener('keydown', moveSelection);
-          }
+                  function robotReady()
+                  {
+                    window.addEventListener('keydown', moveSelection);
+                  }
 
-          function placeRobot(){
-            $(".startBtn").fadeOut(100)
-            $("#robot").animate({left: '100px'});
-              setTimeout('$("#robot").animate({top: "430px"})',100);
-              setTimeout('$("#e1").addClass("bgw")',900);
-              setTimeout('$(".heading").fadeIn(1000)',1000);
-              setTimeout('$(".howto").fadeIn(1000)',2000);
-            updateOutput();
-            }
-            
-            function revealCoords(){
-              $("#oX").fadeIn(1000);
-              $("#oY").fadeIn(1000);
-              $("#roboIsFacing").fadeIn(1000);
-              $("#gamestatus").val("started");
-            }
+                  // places robo on bottom left grid (0,0)
 
-            var roboQuotes = [
-                "...are you crazy!? That's too hot",
-                "You don't expect me to jump do you?",
-                "Ahh...no thanks",
-                "It does not compute, it does not compute",
-                "I'll melt if I go there",
-                "That's FIRE dude",
-                "Get the hose ready",
-                "I'll last 2 minutes if I go further"
-              ];
+                  function placeRobot(){
+                    $(".startBtn").fadeOut(100)
+                    $("#robot").animate({left: '100px'});
+                      setTimeout('$("#robot").animate({top: "430px"})',100);
+                      setTimeout('$("#e1").addClass("bgw")',900);
+                      setTimeout('$(".heading").fadeIn(1000)',1000);
+                      setTimeout('$(".howto").fadeIn(1000)',2000);
+                    updateOutput();
+                    }
+                    
+                    // When "Place Robo" button is clicked the output elements
+                    // appear and game status changes to "started"
+
+                    function revealCoords(){
+                      $("#oX").fadeIn(1000);
+                      $("#oY").fadeIn(1000);
+                      $("#roboIsFacing").fadeIn(1000);
+                      $("#gamestatus").val("started");
+                    }
+
+                      // what Robo thinks about going off the edge
+                      
+                    var roboQuotes = [
+                        "...are you crazy!? That's too hot",
+                        "You don't expect me to jump do you?",
+                        "Ahh...no thanks",
+                        "It does not compute, it does not compute",
+                        "I'll melt if I go there",
+                        "That's FIRE dude",
+                        "Get the hose ready",
+                        "I'll last 2 minutes if I go further"
+                      ];
