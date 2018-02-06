@@ -187,7 +187,7 @@
                     }
                   };
 
-                  // Message robo sends if user try's to move him off the grid
+                  // Message robo sends if user tries to move him off the grid
 
                   function tooHot(){
                     var q = roboQuotes[ Math.floor( Math.random() * roboQuotes.length ) ];
